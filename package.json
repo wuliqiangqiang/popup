@@ -1,0 +1,20 @@
+{
+  "name": "popup",
+  "version": "1.0.0",
+  "description": "自己用的一个通用popup项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1";
+    "build":"babel src -d lib",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wuliqiangqiang/popup.git"
+  },
+  "author": "小志",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wuliqiangqiang/popup/issues"
+  },
+  "homepage": "https://github.com/wuliqiangqiang/popup#readme"
+}
