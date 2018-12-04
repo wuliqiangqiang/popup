@@ -1,0 +1,40 @@
+._common-popup {
+  position: absolute;
+  background: #ffffff;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.22);
+  border-radius: 3px;
+  z-index: 999;
+  padding: 10px;
+  top: 200px;
+  left: 200px;
+  font-size: 12px;
+}
+._common-popup > span.pointer {
+  content: " ";
+  border-left: 0.5px solid rgba(225, 225, 225, 0.31);
+  border-top: 0.5px solid rgba(225, 225, 225, 0.31);
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+}
+._common-popup > span.pointer.bottom {
+  transform: rotate(45deg);
+}
+._common-popup > span.pointer.top {
+  transform: rotate(225deg);
+}
+._common-popup > span.pointer.left {
+  transform: rotate(135deg);
+}
+._common-popup > span.pointer.right {
+  transform: rotate(-45deg);
+}
+
+.common_popup.v_hide {
+  visibility: hidden;
+}
+.common_popup.v_hide > ._common-popup {
+  transform: scale(0);
+}
