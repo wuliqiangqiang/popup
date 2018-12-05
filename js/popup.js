@@ -11,8 +11,8 @@
         direction :'bottom',      //弹框的方向，基于trigger目标 有：top(上左)、right(右上)、bottom(下左)、left(左上)，默认为bottom (下左)  四个参数，配合position调整位置
         position :[0, 0],         //基于direction 的位置 做微调 传参为：[x,y] 微调 默认为[0.0]
         pointer :[0, 0],          //指针的位置，基于弹框本身 对应为top: 四边形下左、right:右上)、bottom:下左)、left:左上)，默认为bottom :下左)  传参为：(x,y) 微调 默认为[0.0]
-        width :220,               //弹框的宽度   默认为min220
-        height :20,               //弹框的高度   默认为min20
+        width :string | number,   //弹框的宽度   默认为
+        height :string | number,  //弹框的高度   默认为
         fixed :false,             //定位方式是绝对定位，true为fixed(position:fixed),适用于给目标为fixed的场景
         style :{},                //直接传对象，修饰弹框样式   默认为空
         pointerStyle :{},         //直接传对象，修饰指针样式   默认为空
@@ -25,6 +25,7 @@
  * show:function(){},
  * hide:function(){},
  * showBefore:function(){},   //显示回调
+ * showAfter:function(){}
  * hideAfter:function(){}    //隐藏回调
  *
  */
@@ -159,9 +160,8 @@ class api {
   }
 
   hide() {
-    this.hideAfterCb && this.hideAfterCb();
-
     this.$Popup.addClass("v_hide");
+    this.hideAfterCb && this.hideAfterCb();
     return this;
   }
 
@@ -195,7 +195,7 @@ class api {
     this.direction = "bottom"; //弹框的方向，基于trigger目标 有：top(上左)、right(右上)、bottom(下左)、left(左上)，默认为bottom (下左)  四个参数，配合position调整位置
     this.position = [0, 0]; //基于this.direction 的位置 做微调 传参为：[x,y] 微调
     this.pointer = [0, 0]; //指针的位置，基于弹框本身 对应为top: 四边形下左、right:右上)、bottom:下左)、left:左上)，默认为bottom :下左)  传参为：(x,y) 微调
-    this.width = 220; //弹框的宽度
+    this.width = 0; //弹框的宽度
     this.height = "auto"; //弹框的高度
     this.fixed = false; //定位方式是绝对定位，true为fixed
     this.style = {}; //直接传对象，修饰弹框样式

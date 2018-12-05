@@ -1,0 +1,22 @@
+{
+  "name": "free-popup",
+  "version": "1.0.1",
+  "description": "一个自由冒泡，可以做提示，内容弹出等",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wuliqiangqiang/popup.git"
+  },
+  "keywords": [
+    "popup"
+  ],
+  "author": "ryan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wuliqiangqiang/popup/issues"
+  },
+  "homepage": "https://github.com/wuliqiangqiang/popup#readme"
+}
