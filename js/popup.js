@@ -32,8 +32,8 @@
 
 
 'use strict';
-import '../scss/common-popup';
-
+// import '../scss/common-popup';
+import '../css/popup.css';
 const $ = require('jquery');
 const POINTER_HEIGHT = 5 + 2;   //指针的高度 +2是加点空隙
 const $popup_arr = {};   //存放所有popup对象
@@ -45,8 +45,8 @@ class api {
 
     if (!$(opts.trigger).length && !(opts.trigger instanceof $)) return null;
 
-    for(let o in popup_arr){
-      if(popup_arr[o].trigger === opts.trigger.trim()){
+    for (let o in popup_arr) {
+      if (popup_arr[o].trigger === opts.trigger.trim()) {
         return null;
       }
     }
@@ -77,7 +77,7 @@ class api {
     //给实例对象添加基本DOM
     $slotDom.html(
       `<div class="_common-popup _common-popup${this.version}">
-        ${this.pointerHide?'':'<span class="pointer"></span>'}
+        ${this.pointerHide ? '' : '<span class="pointer"></span>'}
         <div class="_common-popup-content"></div>
       </div>`
     );
