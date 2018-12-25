@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('./js/dist.js');
+module.exports = require('./dist/popup.js');
