@@ -1,6 +1,6 @@
 {
   "name": "free-popup",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "一个自由冒泡，可以做提示，内容弹出等",
   "main": "index.js",
   "scripts": {
