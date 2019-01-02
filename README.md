@@ -136,3 +136,7 @@ style:{
 显示冒泡框之后，触发`cb`回调
 
 参数：`cb`（function选填）
+
+### setContent(cb)
+
+可以改变组件本身的this属性，主要用于this.content。方法和其他function api 大同小异。区别在于，当popup是显示的状态下，会立马响应组件，重新渲染内容

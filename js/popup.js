@@ -27,6 +27,7 @@
  * showBefore:function(){},   //显示回调
  * showAfter:function(){}
  * hideAfter:function(){}    //隐藏回调
+ * setContent:function(){}
  *
  */
 
@@ -162,6 +163,17 @@ class api {
 
   hideAfter(cb) {
     this.hideAfterCb = cb;
+    return this;
+  }
+
+  setContent(cb){
+    cb && cb();
+    if(this.$trigger.data('active')){
+      setTimeout(()=>{
+        this.constructor._setPopupContent.call(this);
+      },160)
+    }
+
     return this;
   }
 
@@ -408,7 +420,10 @@ class api {
   static eventTrigger() {
     let that = this;
     if (!that.triggerType.trim()) return;
-    if (that.triggerType === 'focus') that.triggerType = 'click';
+    if (that.triggerType === 'focus') {
+      that.triggerType = 'click';
+      that.triggerTypeIsFocus = true;
+    };
 
     if (that.triggerType === 'hover') {
       $(document).on('mouseenter', that['_trigger'], function () {
@@ -427,7 +442,7 @@ class api {
     } else {
       $(document).on(that['triggerType'], that['_trigger'], function () {
         let $this = $(this);
-        if ($this.data('active')) {
+        if ($this.data('active') && !that.triggerTypeIsFocus) {
           that.hide();
         } else {
           that.activeTrigger = $(this);
@@ -445,4 +460,4 @@ class api {
   }
 }
 
-module.exports = api;
+export default api;
