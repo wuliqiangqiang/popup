@@ -171,7 +171,7 @@ class api {
     if(this.$trigger.data('active')){
       setTimeout(()=>{
         this.constructor._setPopupContent.call(this);
-      },160)
+      },0)
     }
 
     return this;
