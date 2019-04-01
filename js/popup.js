@@ -20,6 +20,7 @@
         pointerHide:false,        //隐藏冒泡三角形，默认为false
         autoClose:false,          //开启其他popup的时候自动隐藏其他popup，默认为true，false的时候，不会自动隐藏本身
         autoInitContent:false,    //每次show都会重新，默认为true,不启动传false
+        forceNoClose:true,        //强制不关闭
  })
  * 提供的方法：
  * show:function(){},
@@ -132,7 +133,7 @@ class api {
     this.constructor._setTriggerPosition.call(this, true);  //重新计算
 
     for (let key in popup_arr) {
-      if (!popup_arr[key].$Popup.hasClass('autoClose')) {
+      if (!popup_arr[key].$Popup.hasClass('autoClose') && !popup_arr[key].$Popup.forceNoClose) {
         popup_arr[key].hide();
       }
     }
@@ -224,6 +225,7 @@ class api {
     this.autoInitContent = true;   //自动初始化content
     this.debug = false;             //调试模式
     this.pointerStyle = false;      //设置指针样式，默认为false
+    this.forceNoClose = false;      //强制不关闭，默认为 false
   }
 
   //获取对象的offset
@@ -399,7 +401,7 @@ class api {
       if (!$(e.target).parents('.common_popup').length) {
         for (let key in popup_arr) {
           //已经展开
-          if (!popup_arr[key].$Popup.hasClass('v_hide')) {
+          if (!popup_arr[key].$Popup.hasClass('v_hide') && !popup_arr[key].forceNoClose) {
             popup_arr[key].hide();
           }
         }

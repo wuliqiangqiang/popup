@@ -107,6 +107,12 @@ style:{
 
 每次触发冒泡框显示的时候都会重新渲染冒泡框本身的内容，不重新传false
 
+### forceNoClose
+
+参数：`boolean`
+
+强制不自动关闭 popup 默认为 false
+
 ---------
 
 ## 回调函数
@@ -140,3 +146,5 @@ style:{
 ### setContent(cb)
 
 可以改变组件本身的this属性，主要用于this.content。方法和其他function api 大同小异。区别在于，当popup是显示的状态下，会立马响应组件，重新渲染内容
+
+
